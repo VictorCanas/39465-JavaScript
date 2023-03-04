@@ -1,98 +1,63 @@
-//FUNCTION
-
-function sumar() {
-  //bloque de codigo a ejecutar
-  const numero1 = parseInt(prompt("Ingresa un numero"));
-  const numero2 = parseInt(prompt("Ingresa otro numero"));
-  const resultado = numero1 + numero2;
-  //La alerta lo termina
-  // alert("El resultado de la sume es: " + resultado);
-  return resultado;
-}
-
-//Para pasar parametros se ponder del ()
-const resultadoSuma = sumar();
-alert("El resultado de la suma es: " + resultado);
-console.log(resultadoSuma);
-
-//Vamos a pasar parametros
-function sumar(n1, n2) {
-  //bloque de codigo a ejecutar
-  const resultado = n1 + n2;
-  return resultado;
-}
-
-const numero1 = parseInt(prompt("Ingresa un numero"));
-const numero2 = parseInt(prompt("Ingresa otro numero"));
-const resultadoSuma = sumar(numero1, numero2);
-alert("resultado: " + resultadoSuma);
-
-
-// var primerVar = "texto";
-// let segundVar = 5;
-// segundVar = 10;
-// const tercerVar = "texto1";
-// tercerVar = "texto2";
-
-//parseInt -> cambia un texto a numbero en um prompt
-
-// const numero1 = prompt("Ingresa un numero");
-// const numero2 = prompt("Ingresa otro numero");
-// const resultado = numero1 + numero2;
-// alert("El resultado de la suma de los dos numeros es: " +resultado);
+//usario escoja un banco y mostrarle las distintas cuotas dependiendo los meses y el monto
 
 /*
-Si - mañana no llueve -> vamos a la playa
-if (mañana no llueve) {vamos a la playa}
-if(condicion) {
-bloque de codigo a ejecutar si la condicion se resuelve como verdadera
+cada banco
+{
+  nombre
+  id 
+  tasa12
+  tasa24
+  tasa36
 }
 */
 
-/*
-== Compara valor
-=== Compara valor y tipo de dato
-*/
+//crear clase banco
 
-//TODO PRACTICA - ALGORTIM CON UN CONDICIONAL
-const añoactual = parseInt(prompt("Ingresa el año actual"));
-const añoNacimiento = parseInt(prompt("Ingresa tu año de nacimiento"));
-
-if (añoactual >= añoNacimiento) {
-  const edad = añoactual - añoNacimiento;
-  alert("Tu edad es: " + edad);
-} else if (añoactual <= añoNacimiento) {
-  alert("El año actual no puede ser menor que tu año de nacimiento");
-}
-
-//CICLO CONTEO - FOR
-const numero = parseInt(prompt("Ingresa un numero"));
-for (let i = 0; i < numero; i++) {
-  // bloque de codigo que yo quiero que se ejecute
-  // entregar copa de vino
-  console.log(i);
-}
-
-//i = i+1 === i++
-
-//break - continue
-
-for (let i = 0; i < 10; i = i + 1) {
-  //bloque de codigo que yo quiero que se ejecute
-  //entregar copa de vino
-  if (i === 4) {
-    break; // acaba el ciclo
-    // continue; continua el ciclo
+class Banco {
+  constructor(nombre, id, tasa12, tasa24, tasa36) {
+    this.nombre = nombre;
+    this.id = id;
+    this.tasa12 = tasa12;
+    this.tasa24 = tasa24;
+    this.tasa36 = tasa36;
   }
-  console.log(i);
 }
 
-//CICLO  CONDICION - WHILE
+const bancolombia = new Banco("bancolombia", 1, 10, 11, 12);
+const itau = new Banco("itau", 2, 12, 14, 15);
+const nubank = new Banco("nubank", 3, 8, 11, 14);
+const nacion = new Banco("nacion", 4, 5, 7, 8);
 
-let password = prompt("Ingresa tu password");
-while (password !== "12345") {
-  password = prompt("Ingresa nuevamente tu password");
+//console.log(bancolombia, itau, nubank, nacion);
+
+const bancoDeseado = parseInt(
+  prompt(
+    "Escoge el banco que deseas cotizar: 1.Bancolombia 2. Itau 3. Nubank 4. Nacion"
+  )
+);
+
+// Esperando que la persona ponga 1,2,3 o 4.
+
+//No estamos exceptos que la persona ingrese otro info
+
+//Variable para condicion de banco correcto
+let escogioBanco = false;
+
+//Validar que la persona ingrese un numero entre 1 y 4
+while (escogioBanco === false) {
+  if (bancoDeseado === 1) {
+    escogioBanco = true;
+  } else if (bancoDeseado === 2) {
+    escogioBanco = true;
+  } else if (bancoDeseado === 3) {
+    escogioBanco = true;
+  } else if (bancoDeseado === 4) {
+    escogioBanco = true;
+  } else {
+    bancoDeseado = parseInt(
+      prompt(
+        "Escoge un numero banco correcto: 1.Bancolombia 2. Itau 3. Nubank 4. Nacion"
+      )
+    );
+  }
 }
-alert("Password ingreada con exito");
-
-
