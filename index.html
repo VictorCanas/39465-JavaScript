@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript</title>
+    <title>Pre-Entrega1 Canas</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>After 1</h1>
-    <script src="index.js"></script>
+    <h1>Simulador Interactivo</h1>
+    <p>
+      Este simulador calcula el valor final de un producto ingresado por el
+      cliente y le muestra el precio final con impuestos y descuentos
+    </p>
+    <div class="form-container">
+      <form id="product-form">
+        <label for="product-name">Nombre del Producto:</label>
+        <input type="text" id="product-name" required />
+        <label for="product-price">Precio del Producto:</label>
+        <input type="number" id="product-price" min="0" step=".01" required />
+        <label for="tax">Impuestos (%):</label>
+        <input type="number" id="tax" min="0" step=".01" required />
+        <label for="discount">Descuento (%):</label>
+        <input type="number" id="discount" min="0" step=".01" required />
+        <button type="submit">Calcular Valor Final</button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="miarchivo.js"></script>
   </body>
 </html>
