@@ -1,63 +1,45 @@
-//usario escoja un banco y mostrarle las distintas cuotas dependiendo los meses y el monto
+//TODO ARRAY
 
-/*
-cada banco
-{
-  nombre
-  id 
-  tasa12
-  tasa24
-  tasa36
-}
-*/
+const obj = { nombre: "Farid" };
+const arrayAnimales = ["perro", "gato", "vaca", "caballo", "cerdo"];
+const arrayRandom = ["hola", 2, true, { nombre: "Farid" }];
+//posicion o  indice   0     1    2             3
 
-//crear clase banco
+// console.log(arrayAnimales);
 
-class Banco {
-  constructor(nombre, id, tasa12, tasa24, tasa36) {
-    this.nombre = nombre;
-    this.id = id;
-    this.tasa12 = tasa12;
-    this.tasa24 = tasa24;
-    this.tasa36 = tasa36;
-  }
+// //cantidad de elementos
+// console.log(arrayAnimales.length);
+// console.log(arrayRandom.length);
+
+// //llamar un elemento en particular
+// console.log(arrayAnimales[4]);
+// console.log(arrayAnimales[3]);
+
+//Mostrar todos los elementos
+//Utilizamos i porque esto hace referencia a indice ó index
+for (let i = 0; i < 5; i++) {
+  console.log(arrayAnimales[i]);
 }
 
-const bancolombia = new Banco("bancolombia", 1, 10, 11, 12);
-const itau = new Banco("itau", 2, 12, 14, 15);
-const nubank = new Banco("nubank", 3, 8, 11, 14);
-const nacion = new Banco("nacion", 4, 5, 7, 8);
+// //Mostrar todos los elementos - ejemplo 2
+// for (let i = 0; i < arrayAnimales.length; i++) {
+//   console.log(arrayAnimales[i]);
+// }
 
-//console.log(bancolombia, itau, nubank, nacion);
+// agregar elementos a un arreglo
+arrayAnimales.push("SERPIENTE"); //agrega al final
+arrayAnimales.unshift("CABALLO"); //agrega al inicio
 
-const bancoDeseado = parseInt(
-  prompt(
-    "Escoge el banco que deseas cotizar: 1.Bancolombia 2. Itau 3. Nubank 4. Nacion"
-  )
-);
+// eliminar elementos a un arreglo
+arrayAnimales.pop(); //elimina el ultimo elemento
+arrayAnimales.shift(); //elimina el primer elemento
 
-// Esperando que la persona ponga 1,2,3 o 4.
+// .splice()
+// elimiar
+//arrayAnimales.splice(2,1)
 
-//No estamos exceptos que la persona ingrese otro info
+// para agregar y eliminar al mismo tiempo
+//arrayAnimales.splice(2, 1, "SERPIENTE");
+console.log(arrayAnimales);
 
-//Variable para condicion de banco correcto
-let escogioBanco = false;
-
-//Validar que la persona ingrese un numero entre 1 y 4
-while (escogioBanco === false) {
-  if (bancoDeseado === 1) {
-    escogioBanco = true;
-  } else if (bancoDeseado === 2) {
-    escogioBanco = true;
-  } else if (bancoDeseado === 3) {
-    escogioBanco = true;
-  } else if (bancoDeseado === 4) {
-    escogioBanco = true;
-  } else {
-    bancoDeseado = parseInt(
-      prompt(
-        "Escoge un numero banco correcto: 1.Bancolombia 2. Itau 3. Nubank 4. Nacion"
-      )
-    );
-  }
-}
+const arrayAnimales2 = ["cocodrilo", "raton", "arana", "carpincho", "toro"];
