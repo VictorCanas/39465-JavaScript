@@ -1,35 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.form-container {
-  width: 400px;
-  margin: 0 auto;
-  padding: 10px;
-  border: 2px solid #221515;
-  border-radius: 5px;
-}
-
-.form-container label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-container input {
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 3px;
-  border: 2px solid #221515;
-}
-
-#result {
-  margin-top: 20px;
-  padding: 20px;
-  border: 2px solid #221515;
-  border-radius: 5px;
+.cardProducto{
+  width:200px;
+  margin: 5px;
 }
