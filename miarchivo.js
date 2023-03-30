@@ -35,6 +35,18 @@ productForm.addEventListener("submit", function (e) {
   console.log(discount);
   console.log(totalPrice);
 
+  // Agregamos la implementación de uso de JSON y Storage
+  const data = {
+    productName: productName,
+    productPrice: productPrice,
+    tax: tax,
+    discount: discount,
+    totalPrice: totalPrice,
+  };
+  localStorage.setItem("data", JSON.stringify(data));
+  const storedData = JSON.parse(localStorage.getItem("data"));
+  console.log(storedData);
+
   resultDiv.innerHTML = `
         <p>Producto: ${productName}</p>
         <p>Precio Inicial: $${productPrice.toFixed(2)}</p>
