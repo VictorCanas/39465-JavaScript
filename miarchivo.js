@@ -6,25 +6,27 @@ productForm.addEventListener("submit", function (e) {
   e.preventDefault(); // Prevenir comportamiento por defecto
 
   const productName = document.getElementById("product-name").value;
-
   const productPrice = parseFloat(
     document.getElementById("product-price").value
   );
   const tax = parseFloat(document.getElementById("tax").value);
   const discount = parseFloat(document.getElementById("discount").value);
 
-  // Algoritmo con Ciclo
-  let totalPrice = productPrice;
+  // Creamos un array con los valores de impuestos y descuentos
   const percentValues = [tax, discount];
-  for (let i = 0; i < percentValues.length; i++) {
-    if (percentValues[i] > 0) {
-      if (i === 0) {
-        totalPrice += (productPrice * percentValues[i]) / 100;
-      } else if (i === 1) {
-        totalPrice -= (totalPrice * percentValues[i]) / 100;
-      }
+
+  // Usamos el método filter para filtrar los valores mayores a 0
+  const filteredValues = percentValues.filter((value) => value > 0);
+
+  // Algoritmo con Ciclo y modificaciones
+  let totalPrice = productPrice;
+  totalPrice = filteredValues.reduce((accumulatedPrice, currentValue) => {
+    if (currentValue === tax) {
+      return accumulatedPrice + (productPrice * currentValue) / 100;
+    } else if (currentValue === discount) {
+      return accumulatedPrice - (accumulatedPrice * currentValue) / 100;
     }
-  }
+  }, totalPrice);
 
   //Provamos que recibimos los resultados
   console.log(productName);

@@ -1,4 +1,4 @@
-# Pre-Entrega 1 - Canas
+# Pre-Entrega 2 - Canas
 
 ## Simulador Interactivo
 

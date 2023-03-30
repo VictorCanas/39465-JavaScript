@@ -7,6 +7,10 @@ h1 {
   margin-top: 50px;
 }
 
+p {
+  text-align: center;
+}
+
 .form-container {
   width: 400px;
   margin: 0 auto;
